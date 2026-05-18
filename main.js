@@ -64,6 +64,66 @@ const fadeObserver = new IntersectionObserver(
 );
 animatedEls.forEach((el) => fadeObserver.observe(el));
 
+// ── CODE TYPEWRITER ───────────────────────────────────────────────
+(function typewriterCode() {
+  const codeEl = document.querySelector('.code-body code');
+  if (!codeEl) return;
+
+  // Flatten DOM children into {ch, cls} character array
+  const chars = [];
+  codeEl.childNodes.forEach(node => {
+    if (node.classList && node.classList.contains('c-cursor')) return;
+    const text = node.nodeType === Node.TEXT_NODE
+      ? node.nodeValue
+      : node.textContent;
+    const cls = node.nodeType === Node.ELEMENT_NODE ? node.className : null;
+    for (const ch of text) chars.push({ ch, cls });
+  });
+
+  // Build cursor element, clear code area
+  const cursorEl = document.createElement('span');
+  cursorEl.className = 'c-cursor';
+  cursorEl.textContent = ' ';
+  codeEl.innerHTML = '';
+
+  let i = 0, currentEl = null, currentCls = Symbol();
+
+  function type() {
+    if (i >= chars.length) {
+      codeEl.appendChild(cursorEl);
+      return;
+    }
+
+    const { ch, cls } = chars[i++];
+
+    if (cls !== currentCls) {
+      currentCls = cls;
+      if (cls === null) {
+        currentEl = document.createTextNode(ch);
+        codeEl.appendChild(currentEl);
+      } else {
+        currentEl = document.createElement('span');
+        currentEl.className = cls;
+        currentEl.textContent = ch;
+        codeEl.appendChild(currentEl);
+      }
+    } else {
+      if (currentEl.nodeType === Node.TEXT_NODE) {
+        currentEl.nodeValue += ch;
+      } else {
+        currentEl.textContent += ch;
+      }
+    }
+
+    // Slight random speed variation for realism; newlines are instant
+    const delay = ch === '\n' ? 0 : Math.random() * 1.1 + 0.5;
+    setTimeout(type, delay);
+  }
+
+  // Small pause before starting so the page feels settled
+  setTimeout(type, 600);
+})();
+
 // Contact form — swap button text on submit (no real backend)
 function handleSubmit(e) {
   e.preventDefault();
