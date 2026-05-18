@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jaclyn Jones — Software Developer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=Lora:wght@600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ── HEADER / HERO ────────────────────────────────────────────── -->
+  <header id="home">
+    <nav>
+      <span class="nav-name">JJ</span>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero">
+      <div class="hero-content">
+        <p class="hero-greeting">Hi, I'm</p>
+        <h1>Jaclyn Jones</h1>
+        <p class="hero-tagline">Computer Science Student &amp; Software Developer</p>
+        <a href="#about" class="btn btn-primary">Learn more</a>
+      </div>
+
+      <div class="hero-code" aria-hidden="true">
+        <div class="code-window">
+          <div class="code-titlebar">
+            <span class="code-dot dot-red"></span>
+            <span class="code-dot dot-yellow"></span>
+            <span class="code-dot dot-green"></span>
+            <span class="code-filename">CourseAPI.swift</span>
+          </div>
+          <pre class="code-body"><code><span class="c-keyword">import</span> <span class="c-type">Foundation</span>
+
+<span class="c-keyword">struct</span> <span class="c-type">CourseResponse</span>: <span class="c-type">Codable</span> {
+    <span class="c-keyword">let</span> courses: [<span class="c-type">Course</span>]
+}
+
+<span class="c-keyword">class</span> <span class="c-type">CourseAPI</span> {
+    <span class="c-keyword">static let</span> service = <span class="c-type">CourseAPI</span>()
+
+    <span class="c-keyword">func</span> <span class="c-fn">fetchCourses</span>() <span class="c-keyword">async throws</span> -> [<span class="c-type">Course</span>] {
+        <span class="c-keyword">guard let</span> url = <span class="c-type">URL</span>(string:
+            <span class="c-string">"https://mockapi.io/Courses"</span>)
+        <span class="c-keyword">else</span> { <span class="c-keyword">throw</span> <span class="c-type">URLError</span>(.badURL) }
+
+        <span class="c-keyword">let</span> (data, _) = <span class="c-keyword">try await</span>
+            <span class="c-type">URLSession</span>.shared.<span class="c-fn">data</span>(from: url)
+        <span class="c-keyword">return try</span> <span class="c-type">JSONDecoder</span>()
+            .<span class="c-fn">decode</span>([<span class="c-type">Course</span>].self, from: data)
+    }
+}<span class="c-cursor"> </span></code></pre>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- ── ABOUT ─────────────────────────────────────────────────── -->
+    <section id="about">
+      <div class="section-inner">
+        <span class="section-label">About me</span>
+        <h2>A little about me</h2>
+
+        <div class="about-grid">
+          <div class="about-photo">
+            <img src="assets/images/portrait.jpg" alt="Jaclyn Jones" />
+          </div>
+
+          <div class="about-text">
+            <p>
+              I'm a Computer Science student at Arizona State University
+              with a strong foundation in iOS development, enterprise
+              systems, and AI-integrated web applications.
+            </p>
+            <p>
+              I enjoy building clean, well-architected software, from
+              native Swift apps using SwiftUI and MVVM to full-stack web
+              tools powered by REST APIs and AI. I bring professional
+              experience from software internships and a consistent track
+              record of shipping polished, user-facing products.
+            </p>
+
+            <div class="about-actions">
+              <a href="assets/documents/Base Resume.pdf" target="_blank" rel="noopener" class="btn btn-primary">
+                View Resume
+              </a>
+              <a href="#contact" class="btn btn-outline">Get in touch</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── EDUCATION ────────────────────────────────────────────── -->
+    <section id="education">
+      <div class="section-inner">
+        <span class="section-label">Education</span>
+        <h2>Where I've studied</h2>
+
+        <div class="education-card animate-on-scroll">
+          <div class="education-left">
+            <div class="education-logo">ASU</div>
+          </div>
+          <div class="education-body">
+            <div class="education-meta">
+              <span class="timeline-company">Arizona State University</span>
+              <span class="timeline-date">Aug 2023 – May 2027</span>
+            </div>
+            <h3 class="timeline-role">B.S. Computer Science</h3>
+            <p>Tempe, AZ</p>
+            <div class="education-stats">
+              <div class="education-stat">
+                <span class="education-stat-value">4.0</span>
+                <span class="education-stat-label">Cumulative GPA</span>
+              </div>
+              <div class="education-stat">
+                <span class="education-stat-value">May 2027</span>
+                <span class="education-stat-label">Expected Graduation</span>
+              </div>
+            </div>
+            <div class="tag-list">
+              <span class="tag">Data Structures & Algorithms</span>
+              <span class="tag">Object-Oriented Programming</span>
+              <span class="tag">Operating Systems</span>
+              <span class="tag">Mobile App Development</span>
+              <span class="tag">Software Engineering</span>
+              <span class="tag">Computer Architecture</span>
+              <span class="tag">Cybersecurity</span>
+              <span class="tag">Theoretical Computer Science</span>
+              <span class="tag">Programming Languages</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SKILLS ────────────────────────────────────────────────── -->
+    <section id="skills">
+      <div class="section-inner">
+        <span class="section-label">Skills</span>
+        <h2>What I work with</h2>
+
+        <div class="skills-grid">
+          <div class="skill-group animate-on-scroll">
+            <h4>Languages</h4>
+            <div class="tag-list">
+              <span class="tag">Swift</span>
+              <span class="tag">Python</span>
+              <span class="tag">Java</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">SQL</span>
+              <span class="tag">C</span>
+              <span class="tag">C++</span>
+              <span class="tag">MATLAB</span>
+            </div>
+          </div>
+          <div class="skill-group animate-on-scroll">
+            <h4>iOS Development</h4>
+            <div class="tag-list">
+              <span class="tag">SwiftUI</span>
+              <span class="tag">SwiftData</span>
+              <span class="tag">MapKit</span>
+              <span class="tag">CoreLocation</span>
+              <span class="tag">URLSession</span>
+              <span class="tag">Xcode</span>
+              <span class="tag">MVVM</span>
+            </div>
+          </div>
+          <div class="skill-group animate-on-scroll">
+            <h4>Web & APIs</h4>
+            <div class="tag-list">
+              <span class="tag">HTML/CSS</span>
+              <span class="tag">REST APIs</span>
+              <span class="tag">OpenAI API</span>
+              <span class="tag">Cloudflare Workers</span>
+            </div>
+          </div>
+          <div class="skill-group animate-on-scroll">
+            <h4>Tools & Concepts</h4>
+            <div class="tag-list">
+              <span class="tag">Git</span>
+              <span class="tag">Oracle Applications</span>
+              <span class="tag">Workiva</span>
+              <span class="tag">OOP</span>
+              <span class="tag">Data Structures</span>
+              <span class="tag">Software Testing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── EXPERIENCE ─────────────────────────────────────────────── -->
+    <section id="experience">
+      <div class="section-inner">
+        <span class="section-label">Experience</span>
+        <h2>Where I've worked</h2>
+
+        <div class="timeline">
+
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <span class="timeline-company">Ed &amp; Nadine Carson Student Athletic Center · ASU</span>
+                <span class="timeline-date">Mar 2026 – Present</span>
+              </div>
+              <h3 class="timeline-role">Technology Assistant</h3>
+              <p>Deliver Tier 1 help desk support across Windows and macOS environments, resolving hardware and software issues for desktops, laptops, printers, and mobile devices. Configure, image, and deploy new endpoint hardware to end users and maintain accurate IT asset inventory.</p>
+              <div class="tag-list">
+                <span class="tag">Windows</span>
+                <span class="tag">macOS</span>
+                <span class="tag">IT Support</span>
+                <span class="tag">Asset Management</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <span class="timeline-company">Arizona State University</span>
+                <span class="timeline-date">Aug 2025 – Dec 2025</span>
+              </div>
+              <h3 class="timeline-role">Undergraduate Learning Assistant</h3>
+              <p>Facilitated applied programming exercises and team-based engineering projects, reinforcing core computing concepts. Provided targeted debugging support for student teams and delivered constructive pre-submission code reviews.</p>
+              <div class="tag-list">
+                <span class="tag">Computer Science</span>
+                <span class="tag">Debugging</span>
+                <span class="tag">Code Review</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <span class="timeline-company">Cable One</span>
+                <span class="timeline-date">Jun 2024 – Aug 2025 · Resumed Present</span>
+              </div>
+              <h3 class="timeline-role">Oracle Business Systems Intern</h3>
+              <p>Built and maintained SQL-based reporting pipelines in Oracle Applications and Workiva to support production business systems. Automated invoice assignment workflows using Oracle Workflow Tools, reducing manual overhead and improving system reliability. Executed and updated test scripts to validate system workflows and surface functional defects.</p>
+              <div class="tag-list">
+                <span class="tag">SQL</span>
+                <span class="tag">Oracle</span>
+                <span class="tag">Workiva</span>
+                <span class="tag">Workflow Automation</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PROJECTS ───────────────────────────────────────────────── -->
+    <section id="projects">
+      <div class="section-inner">
+        <span class="section-label">Projects</span>
+        <h2>Things I've built</h2>
+      </div>
+
+      <div class="projects-scroll-wrapper">
+        <div class="projects-track">
+
+          <a href="#" class="project-card animate-on-scroll">
+            <div class="project-card-top">
+              <span class="project-icon">📍</span>
+              <span class="project-link-arrow">↗</span>
+            </div>
+            <h3>Study Buddy Finder</h3>
+            <p>iOS app enabling ASU students to discover and connect with nearby study partners in real time. Features live campus map pins, course-based session matching, and push notifications.</p>
+            <div class="tag-list">
+              <span class="tag">Swift</span>
+              <span class="tag">SwiftUI</span>
+              <span class="tag">MapKit</span>
+              <span class="tag">REST API</span>
+            </div>
+          </a>
+
+          <a href="#" class="project-card animate-on-scroll">
+            <div class="project-card-top">
+              <span class="project-icon">✨</span>
+              <span class="project-link-arrow">↗</span>
+            </div>
+            <h3>L'Oréal Skincare Routine Builder</h3>
+            <p>AI-powered web app where users curate a product selection and receive a personalized routine generated by the OpenAI API. Features a multi-turn chat interface and secure API key handling via Cloudflare Worker.</p>
+            <div class="tag-list">
+              <span class="tag">JavaScript</span>
+              <span class="tag">OpenAI API</span>
+              <span class="tag">Cloudflare</span>
+            </div>
+          </a>
+
+          <a href="#" class="project-card animate-on-scroll">
+            <div class="project-card-top">
+              <span class="project-icon">🌿</span>
+              <span class="project-link-arrow">↗</span>
+            </div>
+            <h3>Park Explorer</h3>
+            <p>Park discovery and management app built with strict MVVM architecture. Integrates MapKit with in-map POI search, rendering results as named annotations, and supports full CRUD via swipe gestures and input forms.</p>
+            <div class="tag-list">
+              <span class="tag">Swift</span>
+              <span class="tag">SwiftUI</span>
+              <span class="tag">MapKit</span>
+              <span class="tag">MVVM</span>
+            </div>
+          </a>
+
+          <a href="#" class="project-card animate-on-scroll">
+            <div class="project-card-top">
+              <span class="project-icon">✈️</span>
+              <span class="project-link-arrow">↗</span>
+            </div>
+            <h3>My Travel Journal</h3>
+            <p>Persistent travel logging app where users record and manage visited cities with photos. Built with SwiftData for on-device persistence, reactive list updates via @Query, and PhotosPicker integration.</p>
+            <div class="tag-list">
+              <span class="tag">Swift</span>
+              <span class="tag">SwiftData</span>
+              <span class="tag">SwiftUI</span>
+              <span class="tag">MVVM</span>
+            </div>
+          </a>
+
+          <a href="#" class="project-card animate-on-scroll">
+            <div class="project-card-top">
+              <span class="project-icon">🚀</span>
+              <span class="project-link-arrow">↗</span>
+            </div>
+            <h3>NASA Space Explorer</h3>
+            <p>Web app that fetches astronomy imagery from NASA's APOD API across user-defined date ranges, displaying results in a responsive gallery with a full-resolution modal view.</p>
+            <div class="tag-list">
+              <span class="tag">JavaScript</span>
+              <span class="tag">HTML/CSS</span>
+              <span class="tag">NASA API</span>
+            </div>
+          </a>
+
+          <a href="#" class="project-card animate-on-scroll">
+            <div class="project-card-top">
+              <span class="project-icon">📚</span>
+              <span class="project-link-arrow">↗</span>
+            </div>
+            <h3>Flashcard Study App</h3>
+            <p>Full-featured iOS flashcard app with deck management, card creation with color theming, and an interactive study mode featuring tap-to-reveal flipping, randomized ordering, and sequential navigation.</p>
+            <div class="tag-list">
+              <span class="tag">Swift</span>
+              <span class="tag">SwiftUI</span>
+              <span class="tag">MVVM</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTACT ────────────────────────────────────────────────── -->
+    <section id="contact">
+      <div class="section-inner contact-inner">
+        <span class="section-label">Contact</span>
+        <h2>Let's connect</h2>
+        <p class="contact-sub">
+          I'm actively seeking internship and new grad opportunities in
+          software development. I'd love to connect, so feel free to reach out!
+        </p>
+
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input id="name" type="text" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input id="email" type="email" placeholder="your@email.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" rows="5" placeholder="What's on your mind?" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send message</button>
+        </form>
+
+        <div class="social-links">
+          <a href="https://github.com/jjone282" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/jaclyn-jones-a94392254" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="mailto:jaclynj282@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Jaclyn Jones &middot; jaclynj282@gmail.com &middot; Tempe, AZ &middot; 2026</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+—Principles of Programming—
+Concepts of problem solving using an object-oriented programming language, algorithm design, structured programming, fundamental algorithms and techniques
+
+—Object-Oriented Program & Data—
+Problem solving by programming with an object-oriented programming language. Introduces data structures. Overview of computer science topics.
+
+—Intro to Programming Languages—
+Introduces the procedural, object-oriented, functional and declarative languages.
+
+—Digital Design Fundamentals—
+Number systems, conversion methods, binary and complement arithmetic, Boolean algebra, circuit minimization, ROMs, PLAs, flipflops, synchronous sequential circuits.
+
+—Computer Org/Assemb Lang Prog—
+Register-level computer organization. Instruction set architecture. Assembly language. Processor organization and design. Memory organization. IO programming. Exception/interrupt handling.
+
+—Data Structures and Algorithms—
+Advanced data structures and algorithms, including stacks, queues, trees (B, B+, AVL) and graphs. Searching for graphs, hashing, external sorting.
+
+—Computing Ethics—
+Ethics for computing majors: history of computing, intellectual property, privacy, ethical frameworks, professional ethical responsibilities and risks of computer-based systems.
+
+—Intro Theoretical Computer Sci—
+Introduces formal language theory and automata, Turing machines, decidability/undecidability, recursive function theory and complexity theory.
+
+—Intro to Software Engineering—
+Software life cycle models; project management, team development environments and methodologies; software architectures; quality assurance and standards; legal, ethical issues.
+
+—Information Assurance/Intro to Cybersecurity—
+Concepts of information assurance (IA); basic IA techniques, policies, risk management, administration, legal and ethics issues.
+
+—Operating Systems—
+Operating system structure and services, processor scheduling, concurrent processes, synchronization techniques, memory management, virtual memory, input/output, storage management and file systems.
+
+—Princ of Mobile App Dev—
+Covers topics pertaining to fundamental concepts of mobile application development principles including design patterns; data persistence; interfacing with services and devices; location and incorporation of existing frameworks; user interface and experience; context awareness; utilization of built-in tools for software profiling, testing, and version control; and security/privacy issues.
+
+—Principles of Programming Lang—
+Formal syntactic and semantic descriptions, compilation and implementation issues, and theoretical foundations for several programming paradigms.
