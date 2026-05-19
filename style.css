@@ -853,16 +853,60 @@ footer {
 }
 
 /* ── RESPONSIVE ──────────────────────────────────────────────────── */
-@media (max-width: 640px) {
-  nav ul { gap: 1.1rem; }
-  nav ul a { font-size: .8rem; }
+
+/* Tablet (≤ 768px) */
+@media (max-width: 768px) {
+  section { padding: 3.5rem 1.25rem; }
 
   .about-grid { grid-template-columns: 1fr; }
-  .about-photo { max-width: 180px; }
+  .about-photo { max-width: 160px; }
+
+  .education-card { flex-direction: column; gap: 1rem; }
+
+  .skills-grid { grid-template-columns: 1fr; }
 
   .form-row { grid-template-columns: 1fr; }
 
-  .projects-scroll-wrapper { padding-left: 1rem; padding-right: 1rem; }
+  /* Projects go vertical */
+  .projects-scroll-wrapper {
+    overflow-x: visible;
+    padding: 0 1.25rem;
+  }
+  .projects-track {
+    flex-direction: column;
+    width: 100%;
+  }
+  .project-card {
+    width: 100%;
+  }
+}
 
-  .skills-grid { grid-template-columns: 1fr; }
+/* Mobile (≤ 540px) */
+@media (max-width: 540px) {
+  nav { padding: 0 1rem; }
+  nav ul { gap: .9rem; }
+  nav ul a { font-size: .78rem; }
+
+  .hero { padding: calc(var(--nav-h) + 2rem) 1rem 2rem; }
+  .hero h1 { font-size: clamp(2.2rem, 10vw, 3rem); }
+  .hero-tagline { font-size: 1rem; }
+
+  section { padding: 3rem 1rem; }
+  section h2 { font-size: 1.6rem; margin-bottom: 1.75rem; }
+
+  .timeline { padding-left: 1.25rem; }
+
+  .education-stats { gap: 1.5rem; }
+  .education-stat-value { font-size: 1.25rem; }
+
+  .code-window { font-size: .72rem; }
+
+  footer { font-size: .72rem; padding: 1.5rem 1rem; }
+}
+
+/* Very small (≤ 380px) */
+@media (max-width: 380px) {
+  nav ul { gap: .6rem; }
+  nav ul a { font-size: .72rem; }
+  .hero h1 { font-size: 2rem; }
 }
