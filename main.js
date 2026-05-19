@@ -116,7 +116,7 @@ animatedEls.forEach((el) => fadeObserver.observe(el));
     }
 
     // Slight random speed variation for realism; newlines are instant
-    const delay = ch === '\n' ? 0 : Math.random() * 1.1 + 0.5;
+    const delay = ch === '\n' ? 0 : Math.random() * 4 + 6;
     setTimeout(type, delay);
   }
 
