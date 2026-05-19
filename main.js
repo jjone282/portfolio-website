@@ -1,4 +1,5 @@
 // ── CUSTOM CURSOR ────────────────────────────────────────────────
+if (window.matchMedia('(pointer: fine)').matches) {
 const dot  = document.createElement('div');
 const ring = document.createElement('div');
 dot.className  = 'cursor-dot';
@@ -29,6 +30,7 @@ document.querySelectorAll('a, button, .project-card, .timeline-card, .skill-grou
   el.addEventListener('mouseenter', () => { dot.classList.add('hovered'); ring.classList.add('hovered'); });
   el.addEventListener('mouseleave', () => { dot.classList.remove('hovered'); ring.classList.remove('hovered'); });
 });
+} // end pointer: fine
 
 // Highlight active nav link on scroll
 const sections = document.querySelectorAll('section[id], header[id]');

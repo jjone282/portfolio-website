@@ -183,7 +183,13 @@ section h2 {
 }
 
 /* ── CUSTOM CURSOR ───────────────────────────────────────────────── */
-*, *::before, *::after { cursor: none !important; }
+@media (pointer: fine) {
+  *, *::before, *::after { cursor: none !important; }
+}
+
+@media (pointer: coarse) {
+  .cursor-dot, .cursor-ring { display: none !important; }
+}
 
 .cursor-dot {
   position: fixed;
@@ -866,6 +872,30 @@ footer {
   .skills-grid { grid-template-columns: 1fr; }
 
   .form-row { grid-template-columns: 1fr; }
+
+  /* Hide code window, keep hero full screen, fill space with larger text/spacing */
+  .hero-code { display: none; }
+  header { min-height: 100svh; }
+  .hero {
+    min-height: 100svh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column !important;
+    padding-top: var(--nav-h);
+    padding-bottom: 0;
+    justify-content: flex-start;
+    gap: 1.5rem;
+  }
+  .hero h1 { font-size: clamp(2.8rem, 11vw, 4.5rem); margin-bottom: 1rem; }
+  .hero-greeting { font-size: 1.2rem; margin-bottom: .5rem; }
+  .hero-tagline { font-size: 1.1rem; max-width: 100%; margin-bottom: 2.5rem; }
+  .hero-content {
+    gap: 0;
+    align-items: center;
+    text-align: center;
+    margin-top: 20vh;
+  }
+  .hero { align-items: center; }
 
   /* Projects go vertical */
   .projects-scroll-wrapper {
