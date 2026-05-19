@@ -871,6 +871,26 @@ footer {
 
   .skills-grid { grid-template-columns: 1fr; }
 
+  /* Reorder: Languages, Web & APIs, iOS Development, Tools & Concepts */
+  #skills .skill-group:nth-child(1) { order: 1; }
+  #skills .skill-group:nth-child(3) { order: 2; }
+  #skills .skill-group:nth-child(2) { order: 3; }
+  #skills .skill-group:nth-child(4) { order: 4; }
+
+  /* Fix colors to keep alternating pink/lavender pattern */
+  #skills .skill-group:nth-child(2) h4 { color: var(--pink-500); }
+  #skills .skill-group:nth-child(2) .tag {
+    background: var(--pink-50);
+    color: var(--pink-600);
+    border-color: var(--pink-200);
+  }
+  #skills .skill-group:nth-child(4) h4 { color: var(--lavender-dark); }
+  #skills .skill-group:nth-child(4) .tag {
+    background: var(--lavender-light);
+    color: var(--lavender-dark);
+    border-color: var(--lavender);
+  }
+
   .form-row { grid-template-columns: 1fr; }
 
   /* Hide code window, keep hero full screen, fill space with larger text/spacing */
